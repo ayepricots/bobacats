@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Boba Cats</title>
+    <style>
+      #about {
+        display: none;
+      }
+      #quiz {
+        display: none;
+      }
+      #results {
+        display: none;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- start page -->
+    <div id="start">
+      <h1>Boba Cats</h1>
+      <p>yo this clapped rn</p>
+      <button onClick="startQuiz()">start</button>
+      <button onClick="aboutPage()">about</button>
+    </div>
+
+    <!-- about page -->
+    <div id="about">
+      <h1>add the possible boba cats</h1>
+      <button onClick="backToStart('about')">back</button>
+    </div>
+
+    <!-- quiz page -->
+    <div id="quiz">
+      <div class="question" id="1">
+        <h1>
+          You walk into your favourite boba shop, the sweet scent of tea and
+          tapioca filling the air. Do you want to order at the counter or the
+          kiosk?
+        </h1>
+        <button onClick="one1()">Counter</button>
+        <button onClick="one2()">Kisok</button>
+      </div>
+
+      <div class="question" id="1.5">
+        <h1>
+          Uh oh, the kiosk screen flickers, then goes completely black. Rip it’s
+          broken :(
+        </h1>
+        <button onClick="next(1.5)">
+          I guess I’ll have to go to the cashier!
+        </button>
+      </div>
+
+      <div class="question" id="2">
+        <h1>
+          You step into line, the boba craving getting stronger. Before you
+          reach the counter, the person in front of you fumbles their drink! The
+          cup falls, the lid pops and an explosion of milk tea splatters across
+          the floor!
+        </h1>
+        <button onClick="two1()">
+          Oh no! Let me grab some napkins and help!
+        </button>
+        <button onClick="two2()">Gasp! A tragic waste of boba!</button>
+        <button onClick="two3()">I'm just gonna… step away slowly</button>
+        <button onClick="two4()">
+          I’ll offer napkins but also stay out of it
+        </button>
+      </div>
+
+      <div class="question" id="3">
+        <h1>
+          Amid the commotion, the worker at the register glances up, and their
+          face lights up. “Hey, it’s you!” They recognise you, probably because
+          you come here a lot.., maybe too much.
+        </h1>
+        <button onClick="three1()">
+          *laughs nervously* I guess I do come here a lot
+        </button>
+        <button onClick="three2()">
+          Oh? Do I? That's weird. I barely come here.
+        </button>
+        <button onClick="three3()">
+          Yeah, I love this place! How are you doing?
+        </button>
+        <button onClick="three4()">Haha, anyway, can I order?</button>
+      </div>
+
+      <div class="question" id="4">
+        <h1>“You want your usual? Or are you feeling for something new?”</h1>
+        <button onClick="four1()">I’ll stick to the usual!</button>
+        <button onClick="four2()">I'll try something new!</button>
+        <button onClick="four3()">What’s you’re favourite?</button>
+        <button onClick="four4()">Hmm, what about you surprise me? ;)</button>
+      </div>
+
+      <div class="question" id="4.5">
+        <h1>
+          Before you can answer, they launch into an enthusiastic breakdown of
+          recommendations. Blah blah and ask questions, someone else can figure
+          them out.
+        </h1>
+        <button onClick="next(4.5)">lol ok</button>
+      </div>
+
+      <div class="question" id="5">
+        <h1>The worker asks for the size of your drink.</h1>
+        <button onClick="five1()">Small is fine. I don't need too much.</button>
+        <button onClick="five2()">Regular please</button>
+        <button onClick="five3()">Large!</button>
+        <button onClick="five4()">EXTRA LARGE, BIGGEST DRINK YOU GOT</button>
+      </div>
+
+      <div class="question" id="6">
+        <h1>What about the ice level?</h1>
+        <button onClick="six1()">No ice</button>
+        <button onClick="six2()">Just a little ice, please</button>
+        <button onClick="six3()">Regular ice is fine!</button>
+        <button onClick="six4()">More ice!</button>
+      </div>
+
+      <div class="question" id="7">
+        <h1>And the sugar level?</h1>
+        <button onClick="seven1()">No sugar!</button>
+        <button onClick="seven2()">30% sugar</button>
+        <button onClick="seven3()">50% sugar</button>
+        <button onClick="seven4()">70% sugar</button>
+        <button onClick="seven5()">100% sugar of course!</button>
+      </div>
+
+      <div class="question" id="8">
+        <h1>
+          Finally, they hand you your receipt, and you step out of the line to
+          wait for your order. Your order is ready! But when they slide
+          something across the counter, it is not your drink. It's a cat!
+        </h1>
+        <button onClick="eight1()">
+          Uh.. this is not my drink. But.. thanks?
+        </button>
+        <button onClick="eight2()">OH MY GOSH, A CAT?? BEST DAY EVERRR</button>
+        <button onClick="eight3()">
+          *looks around, confused* hey, is there a camera crew here or what?
+        </button>
+        <button onClick="eight4()">Can i… trade this for my boba?</button>
+      </div>
+    </div>
+
+    <!-- results page -->
+    <div id="results">
+      <h1>your boba cat:</h1>
+      <p id="result"></p>
+      <button onClick="backToStart('results')">Restart</button>
+    </div>
+  </body>
+</html>
