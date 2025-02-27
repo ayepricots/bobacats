@@ -40,8 +40,8 @@
           tapioca filling the air. Do you want to order at the counter or the
           kiosk?
         </h1>
-        <button onClick="one1()">Counter</button>
-        <button onClick="one2()">Kisok</button>
+        <button onClick="question('SMM','HHH', 'BSR', 1)">Counter</button>
+        <button onClick="noQuestion('TSH','PMK', 'MM', 1)">Kisok</button>
       </div>
 
       <div class="question" id="1.5">
@@ -61,12 +61,16 @@
           cup falls, the lid pops and an explosion of milk tea splatters across
           the floor!
         </h1>
-        <button onClick="two1()">
+        <button onClick="question('HH', 'BSR', 'SMM', 2)">
           Oh no! Let me grab some napkins and help!
         </button>
-        <button onClick="two2()">Gasp! A tragic waste of boba!</button>
-        <button onClick="two3()">I'm just gonna… step away slowly</button>
-        <button onClick="two4()">
+        <button onClick="question('MMP', '3JT', 'OC', 2)">
+          Gasp! A tragic waste of boba!
+        </button>
+        <button onClick="question('PMK', 'TSH', 'CBC', 2)">
+          I'm just gonna… step away slowly
+        </button>
+        <button onClick="question('BSR', 'MM', 'CBC', 2)">
           I’ll offer napkins but also stay out of it
         </button>
       </div>
@@ -77,74 +81,89 @@
           face lights up. “Hey, it’s you!” They recognise you, probably because
           you come here a lot.., maybe too much.
         </h1>
-        <button onClick="three1()">
+        <button onClick="question('TSH', '3JT', 'CBC', 3)">
           *laughs nervously* I guess I do come here a lot
         </button>
-        <button onClick="three2()">
+        <button onClick="question('CBC', 'OC', 'MM', 3)">
           Oh? Do I? That's weird. I barely come here.
         </button>
-        <button onClick="three3()">
+        <button onClick="question('SMM', 'HH', 'MMP', 3)">
           Yeah, I love this place! How are you doing?
         </button>
-        <button onClick="three4()">Haha, anyway, can I order?</button>
+        <button onClick="question('BSR', 'PMK', '3JT', 3)">
+          Haha, anyway, can I order?
+        </button>
       </div>
 
       <div class="question" id="4">
         <h1>“You want your usual? Or are you feeling for something new?”</h1>
-        <button onClick="four1()">I’ll stick to the usual!</button>
-        <button onClick="four2()">I'll try something new!</button>
-        <button onClick="four3()">What’s you’re favourite?</button>
-        <button onClick="four4()">Hmm, what about you surprise me? ;)</button>
-      </div>
-
-      <div class="question" id="4.5">
-        <h1>
-          Before you can answer, they launch into an enthusiastic breakdown of
-          recommendations. Blah blah and ask questions, someone else can figure
-          them out.
-        </h1>
-        <button onClick="next(4.5)">lol ok</button>
-      </div>
-
-      <div class="question" id="5">
-        <h1>The worker asks for the size of your drink.</h1>
-        <button onClick="five1()">Small is fine. I don't need too much.</button>
-        <button onClick="five2()">Regular please</button>
-        <button onClick="five3()">Large!</button>
-        <button onClick="five4()">EXTRA LARGE, BIGGEST DRINK YOU GOT</button>
-      </div>
-
-      <div class="question" id="6">
-        <h1>What about the ice level?</h1>
-        <button onClick="six1()">No ice</button>
-        <button onClick="six2()">Just a little ice, please</button>
-        <button onClick="six3()">Regular ice is fine!</button>
-        <button onClick="six4()">More ice!</button>
+        <button onClick="question('PMK', 'CBC', 'TSH', 4)">
+          I’ll stick to the usual!
+        </button>
+        <button onClick="question('MMP', '3JT', 'OC', 4)">
+          I'll try something new!
+        </button>
+        <button onClick="question('HH', 'BSR', 'SMM', 4)">
+          What’s you’re favourite?
+        </button>
+        <button onClick="question('3JT', 'MM', 'BSR', 4)">
+          Hmm, what about you surprise me? ;)
+        </button>
       </div>
 
       <div class="question" id="7">
-        <h1>And the sugar level?</h1>
-        <button onClick="seven1()">No sugar!</button>
-        <button onClick="seven2()">30% sugar</button>
-        <button onClick="seven3()">50% sugar</button>
-        <button onClick="seven4()">70% sugar</button>
-        <button onClick="seven5()">100% sugar of course!</button>
+        <h1>The worker asks for the size of your drink.</h1>
+        <button onClick="question('MM', 'BSR', 'CBC', 7)">
+          Small is fine. I don't need too much.
+        </button>
+        <button onClick="question('HH', 'TSH', 'OC', 7)">Regular please</button>
+        <button onClick="question('3JT', 'SMM', 'PMK', 7)">Large!</button>
+        <button onClick="question('MMP', 'SMM', 'BSR', 7)">
+          EXTRA LARGE, BIGGEST DRINK YOU GOT
+        </button>
       </div>
 
       <div class="question" id="8">
+        <h1>What about the ice level?</h1>
+        <button onClick="question('OC', '3JT', 'MM', 8)">No ice</button>
+        <button onClick="question('CBC', 'MM', 'TSH', 8)">
+          Just a little ice, please
+        </button>
+        <button onClick="question('PMK', 'HM', 'TSH', 8)">
+          Regular ice is fine!
+        </button>
+        <button onClick="question('MMP', 'OC', 'BSR', 8)">More ice!</button>
+      </div>
+
+      <div class="question" id="9">
+        <h1>And the sugar level?</h1>
+        <button onClick="question('OC', 'CBC', 'TSH', 9)">No sugar!</button>
+        <button onClick="question('BSR', 'TSH', 'CBC', 9)">30% sugar</button>
+        <button onClick="question('MM', 'PMK', '3JT', 9)">50% sugar</button>
+        <button onClick="question('HH', 'SMM', 'MMP', 9)">70% sugar</button>
+        <button onClick="question('MMP', 'OC', 'SMM', 9)">
+          100% sugar of course!
+        </button>
+      </div>
+
+      <div class="question" id="10">
         <h1>
           Finally, they hand you your receipt, and you step out of the line to
           wait for your order. Your order is ready! But when they slide
           something across the counter, it is not your drink. It's a cat!
         </h1>
-        <button onClick="eight1()">
+        <button onClick="question('MM', 'TSH', 'OC', 10)">
           Uh.. this is not my drink. But.. thanks?
         </button>
-        <button onClick="eight2()">OH MY GOSH, A CAT?? BEST DAY EVERRR</button>
-        <button onClick="eight3()">
+        <button onClick="question('SMM', 'MMP', 'HH', 10)">
+          OH MY GOSH, A CAT?? BEST DAY EVERRR
+        </button>
+        <button onClick="question('CBC', 'PMK', 'MM', 10)">
           *looks around, confused* hey, is there a camera crew here or what?
         </button>
-        <button onClick="eight4()">Can i… trade this for my boba?</button>
+        <button onClick="question('OC', '3JT', 'CBC', 10)">
+          Can i… trade this for my boba?
+        </button>
       </div>
     </div>
 
