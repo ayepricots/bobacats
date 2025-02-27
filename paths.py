@@ -78,26 +78,35 @@ quiz_choices = {
 }
 
 simulate_quiz()
-# print(paths)
+
 
 from collections import defaultdict
 
-from collections import defaultdict
-
-# Count occurrences of ties
-tie_counts = defaultdict(list)
+# Initialize winner counts
+winner_counts = defaultdict(int)
+tie_counts = defaultdict(int)
 
 for path in paths:
     scores = path["scores"]
     max_score = max(scores.values())
     tied_cats = [cat for cat, score in scores.items() if score == max_score]
-    tie_counts[len(tied_cats)].append(tied_cats)
+    
+    tie_counts[len(tied_cats)] += 1  # Count occurrences of tie sizes
 
-# Print formatted output, skipping 1-cat ties
+    if len(tied_cats) == 1:  # Sole winner case
+        winner_counts[tied_cats[0]] += 1
+
+# Print total number of paths
+print(f"Total number of paths: {len(paths)}")
+
+# Print sole winner counts
+print("Sole winner counts:")
+for cat, count in sorted(winner_counts.items(), key=lambda x: x[1], reverse=True):
+    print(f"{cat}: {count}")
+
+# Print tie occurrences (ignoring 1-cat ties)
 for tie_count in sorted(tie_counts.keys(), reverse=True):
     if tie_count == 1:
         continue  # Skip cases where there is only one top cat
     
-    print(f"{tie_count} cat ties:")
-    # for tie in tie_counts[tie_count]:
-    #     print("- " + ", ".join(tie))
+    print(f"{tie_count} cat ties: {tie_counts[tie_count]}")
