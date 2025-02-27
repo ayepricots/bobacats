@@ -1,14 +1,16 @@
 const bobaCats = new Map();
-bobaCats.set("CBC", 0);
-bobaCats.set("TSH", 0);
-bobaCats.set("SMM", 0);
-bobaCats.set("MM", 0);
-bobaCats.set("PMK", 0);
-bobaCats.set("HH", 0);
-bobaCats.set("BSR", 0);
-bobaCats.set("3JT", 0);
-bobaCats.set("MMP", 0);
-bobaCats.set("OC", 0);
+
+// from most extroverted to most introverted
+bobaCats.set("MMP", 0); // meow meow passionfruit
+bobaCats.set("3JT", 0); // 3j triplets
+bobaCats.set("SMM", 0); // strawberry mango minuet
+bobaCats.set("HH", 0); // honeydew himalayan
+bobaCats.set("CBC", 0); // creme brulee cat
+bobaCats.set("MM", 0); // matcha munchkin
+bobaCats.set("BSR", 0); // brown sugar ragdoll
+bobaCats.set("OC", 0); // oreo cat
+bobaCats.set("PMK", 0); // pearl milk kitty
+bobaCats.set("TSH", 0); // taro shorthair
 
 // about page
 function aboutPage() {
@@ -192,7 +194,7 @@ function five2() {
 function five3() {
   updateScore("3JT", 3);
   updateScore("SMM", 2);
-  updateScore("PMT", 1);
+  updateScore("PMK", 1);
   nextQuestion(5);
 }
 
