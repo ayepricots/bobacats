@@ -12,22 +12,25 @@ bobaCats.set("OC", 0); // oreo cat
 bobaCats.set("PMK", 0); // pearl milk kitty
 bobaCats.set("TSH", 0); // taro shorthair
 
-// about page
-function aboutPage() {
-  document.getElementById("start").style.display = "none";
-  document.getElementById("about").style.display = "block";
-}
+// array to store the cats with the highest score
+let highestScoreCats = [];
 
-// back to start
-function backToStart(page) {
-  document.getElementById(page).style.display = "none";
-  document.getElementById("start").style.display = "block";
+// switch between pages
+function switchPage(page1, page2) {
+  document.getElementById(page1).style.display = "none";
+  document.getElementById(page2).style.display = "block";
 }
 
 // start quiz
 function startQuiz() {
-  document.getElementById("start").style.display = "none";
-  document.getElementById("quiz").style.display = "block";
+  // reset scores
+  for (let cat of bobaCats.keys()) {
+    bobaCats.set(cat, 0);
+  }
+
+  highestScoreCats = [];
+
+  switchPage("start", "quiz");
 
   // show first question only
   document.querySelectorAll(".question").forEach((question) => {
@@ -38,14 +41,12 @@ function startQuiz() {
 
 // next question
 function nextQuestion(questionNum) {
-  document.getElementById(questionNum).style.display = "none";
-  document.getElementById(questionNum + 1).style.display = "block";
+  switchPage(questionNum, questionNum + 1);
 }
 
 // after the no question question
 function noQuestion(questionNum) {
-  document.getElementById(questionNum).style.display = "none";
-  document.getElementById(questionNum + 0.5).style.display = "block";
+  switchPage(questionNum, questionNum + 0.5);
 }
 
 function updateScore(cat, score) {
@@ -56,20 +57,46 @@ function updateScore(cat, score) {
 function getResults(cat3, cat2, cat1) {
   updateCatScore(cat3, cat2, cat1);
 
-  // find the highest score
+  // find the highest score and take note of cats that share the highest score
   let highestScore = 0;
-  let highestScoreCat = "";
-  bobaCats.forEach((score, cat) => {
+
+  for (let [cat, score] of bobaCats) {
     if (score > highestScore) {
       highestScore = score;
-      highestScoreCat = cat;
+      highestScoreCats = [cat]; // reset the array
+    } else if (score === highestScore) {
+      highestScoreCats.push(cat); // add to the array
     }
-  });
+  }
 
-  document.getElementById("quiz").style.display = "none";
-  document.getElementById("results").style.display = "block";
+  console.log(highestScoreCats); // debugging
 
-  // display the cat
+  // if there is a tie, go the the tiebreaker question
+  if (highestScoreCats.length > 1) {
+    console.log("tiebreaker");
+    switchPage("10", "tiebreaker");
+
+    // only show the cats that are in the tie
+    document.querySelectorAll("#tiebreaker button").forEach((cat) => {
+      if (highestScoreCats.includes(cat.id)) {
+        cat.style.display = "block";
+      } else {
+        cat.style.display = "none";
+      }
+    });
+  } else {
+    console.log("no tiebreaker");
+    highestScoreCat = highestScoreCats[0];
+    console.log(highestScoreCat);
+    displayResult(highestScoreCat);
+  }
+}
+
+function displayResult(highestScoreCat) {
+  console.log("displaying results");
+
+  switchPage("quiz", "results");
+
   document.getElementById("result").innerText = highestScoreCat + "!";
 }
 

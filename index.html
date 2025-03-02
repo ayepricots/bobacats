@@ -23,13 +23,13 @@
       <h1>Boba Cats</h1>
       <p>yo this clapped rn</p>
       <button onClick="startQuiz()">start</button>
-      <button onClick="aboutPage()">about</button>
+      <button onClick="switchPage('start', 'about')">about</button>
     </div>
 
     <!-- about page -->
     <div id="about">
       <h1>add the possible boba cats</h1>
-      <button onClick="backToStart('about')">back</button>
+      <button onClick="switchPage('about', 'start')">back</button>
     </div>
 
     <!-- quiz page -->
@@ -40,9 +40,9 @@
           tapioca filling the air. Do you want to order at the counter or the
           kiosk?
         </h1>
-        <button onClick="question('SMM','HHH', 'BSR', 1)">Counter</button>
+        <button onClick="question('SMM','HH', 'BSR', 1)">Counter</button>
         <button onClick="noQuestion(1), updateCatScore('TSH','PMK', 'MM')">
-          Kisok
+          kiosk
         </button>
       </div>
 
@@ -203,13 +203,39 @@
           Can i… trade this for my boba?
         </button>
       </div>
+
+      <div class="question" id="tiebreaker">
+        <h1>lol tie breaker time</h1>
+        <button onClick="displayResult('MMP')" id="MMP">
+          Meow Meow Passionfruit
+        </button>
+        <button onClick="displayResult('3JT')" id="3JT">3J Triplets</button>
+        <button onClick="displayResult('SMM')" id="SMM">
+          Strawberry Mango Minuet
+        </button>
+        <button onClick="displayResult('HH')" id="HH">
+          Honeydew Himalayan
+        </button>
+        <button onClick="displayResult('CBC')" id="CBC">
+          Creme Brulee Cat
+        </button>
+        <button onClick="displayResult('MM')" id="MM">Matcha Munchkin</button>
+        <button onClick="displayResult('BSR')" id="BSR">
+          Brown Sugar Ragdoll
+        </button>
+        <button onClick="displayResult('OC')" id="OC">Oreo Cat</button>
+        <button onClick="displayResult('PMK') " id="PMK">
+          Pearl Milk Kitty
+        </button>
+        <button onClick="displayResult('TSH')" id="TSH">Taro Shorthair</button>
+      </div>
     </div>
 
     <!-- results page -->
     <div id="results">
       <h1>your boba cat:</h1>
       <p id="result"></p>
-      <button onClick="backToStart('results')">Restart</button>
+      <button onClick="switchPage('results', 'start')">Restart</button>
     </div>
   </body>
 </html>
