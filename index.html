@@ -41,7 +41,9 @@
           kiosk?
         </h1>
         <button onClick="question('SMM','HHH', 'BSR', 1)">Counter</button>
-        <button onClick="noQuestion('TSH','PMK', 'MM', 1)">Kisok</button>
+        <button onClick="noQuestion(1), updateCatScore('TSH','PMK', 'MM')">
+          Kisok
+        </button>
       </div>
 
       <div class="question" id="1.5">
@@ -49,7 +51,7 @@
           Uh oh, the kiosk screen flickers, then goes completely black. Rip it’s
           broken :(
         </h1>
-        <button onClick="next(1.5)">
+        <button onClick="noQuestion(1.5)">
           I guess I’ll have to go to the cashier!
         </button>
       </div>
@@ -113,7 +115,7 @@
 
       <div class="question" id="5">
         <h1>
-          While taking your order, the worker starts asking you about your day. 
+          While taking your order, the worker starts asking you about your day.
           “How’s your day been so far? Anything exciting?”
         </h1>
         <button onClick="question('OC', 'MMP', 'MM', 5)">Alright.</button>
@@ -130,8 +132,8 @@
 
       <div class="question" id="6">
         <h1>
-          The worker starts telling you about a promotion for a limited-time 
-          seasonal drink. You’re intrigued, but it’s a bit out of your comfort 
+          The worker starts telling you about a promotion for a limited-time
+          seasonal drink. You’re intrigued, but it’s a bit out of your comfort
           zone. What do you do?
         </h1>
         <button onClick="question('TSH', 'CBC', 'PMK', 6)">I'll pass</button>
@@ -142,8 +144,8 @@
           I’ll ask for more details first before deciding. Got to be sure!
         </button>
         <button onClick="question('SMM', 'MMP', 'HH', 6)">
-          I don’t care for the promo but love being a trendsetter, so I’ll get it 
-          anyway
+          I don’t care for the promo but love being a trendsetter, so I’ll get
+          it anyway
         </button>
       </div>
 
@@ -188,16 +190,16 @@
           wait for your order. Your order is ready! But when they slide
           something across the counter, it is not your drink. It's a cat!
         </h1>
-        <button onClick="question('MM', 'TSH', 'OC', 10)">
+        <button onClick="getResults('MM', 'TSH', 'OC')">
           Uh.. this is not my drink. But.. thanks?
         </button>
-        <button onClick="question('SMM', 'MMP', 'HH', 10)">
+        <button onClick="getResults('SMM', 'MMP', 'HH')">
           OH MY GOSH, A CAT?? BEST DAY EVERRR
         </button>
-        <button onClick="question('CBC', 'PMK', 'MM', 10)">
+        <button onClick="getResults('CBC', 'PMK', 'MM')">
           *looks around, confused* hey, is there a camera crew here or what?
         </button>
-        <button onClick="question('OC', '3JT', 'CBC', 10)">
+        <button onClick="getResults('OC', '3JT', 'CBC')">
           Can i… trade this for my boba?
         </button>
       </div>

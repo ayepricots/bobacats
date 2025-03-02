@@ -42,19 +42,10 @@ function nextQuestion(questionNum) {
   document.getElementById(questionNum + 1).style.display = "block";
 }
 
-// when next question isn't actually a question
-function noQuestion(cat3, cat2, cat1, questionNum) {
-	updateScore(cat3, 3);
-  updateScore(cat2, 2);
-  updateScore(cat1, 1);
-
+// after the no question question
+function noQuestion(questionNum) {
   document.getElementById(questionNum).style.display = "none";
   document.getElementById(questionNum + 0.5).style.display = "block";
-}
-
-// after the no question question
-function next(questionNum) {
-  noQuestion(questionNum);
 }
 
 function updateScore(cat, score) {
@@ -62,9 +53,8 @@ function updateScore(cat, score) {
   console.log(bobaCats); // debugging
 }
 
-function getResults() {
-  document.getElementById("quiz").style.display = "none";
-  document.getElementById("results").style.display = "block";
+function getResults(cat3, cat2, cat1) {
+  updateCatScore(cat3, cat2, cat1);
 
   // find the highest score
   let highestScore = 0;
@@ -76,15 +66,20 @@ function getResults() {
     }
   });
 
+  document.getElementById("quiz").style.display = "none";
+  document.getElementById("results").style.display = "block";
+
   // display the cat
   document.getElementById("result").innerText = highestScoreCat + "!";
 }
 
 function question(cat3, cat2, cat1, questionNum) {
+  updateCatScore(cat3, cat2, cat1);
+  nextQuestion(questionNum);
+}
+
+function updateCatScore(cat3, cat2, cat1) {
   updateScore(cat3, 3);
   updateScore(cat2, 2);
   updateScore(cat1, 1);
-
-	nextQuestion(questionNum);
 }
-
